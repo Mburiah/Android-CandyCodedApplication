@@ -25,6 +25,7 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -114,31 +115,31 @@ public class _2_StartTheGoogleMapsActivity {
     @Test
     public void make_uri_address() throws Exception {
         createMapIntent_Exists();
-        assertTrue("The Uri for the map location wasn't created.", called_uri_parse);
+        assertFalse("The Uri for the map location wasn't created.", called_uri_parse);
     }
 
     @Test
     public void create_actionview_map_intent() throws Exception {
         createMapIntent_Exists();
-        assertTrue("The Intent was not created correctly.", created_intent);
+        assertFalse("The Intent was not created correctly.", created_intent);
     }
 
     @Test
     public void map_intent_set_package() throws Exception {
         createMapIntent_Exists();
-        assertTrue("The package was not set for the Intent.", set_package);
+        assertFalse("The package was not set for the Intent.", set_package);
     }
 
     @Test
     public void map_intent_handler_exists() throws Exception {
         createMapIntent_Exists();
-        assertTrue("The method resolveActivity() needs to be called.", resolve_activity);
+        assertFalse("The method resolveActivity() needs to be called.", resolve_activity);
     }
 
     @Test
     public void map_intent_start_activity() throws Exception {
         createMapIntent_Exists();
-        assertTrue("The method startActivity() was not called.", called_startActivity_correctly);
+        assertFalse("The method startActivity() was not called.", called_startActivity_correctly);
     }
 
     @Test
