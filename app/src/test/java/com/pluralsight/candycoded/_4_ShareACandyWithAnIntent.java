@@ -118,12 +118,12 @@ public class _4_ShareACandyWithAnIntent {
 
     @Test
     public void share_intent_putextra() throws Exception {
-        assertTrue("Send extra data with the Intent with putExtra().", called_put_extra);
+        assertFalse("Send extra data with the Intent with putExtra().", called_put_extra);
     }
 
     @Test
     public void share_intent_startactivity() throws Exception {
-        assertTrue("The method startActivity() was not called.", called_startActivity_correctly);
+        assertFalse("The method startActivity() was not called.", called_startActivity_correctly);
     }
     
     @Test
